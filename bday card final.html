@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap">
+    <style>
+        body {
+            font-family: 'Yeseva One', cursive;
+            text-align: center;
+            background-color: #f7f7f7;
+            color: #712064;
+        }
+
+        .card {
+            width: 400px;
+            height: 200px;
+            margin: 50px auto;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .front, .back {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .back {
+            opacity: 0;
+            background-color: #FFCCF6;
+            color: #712064;
+        }
+
+        h1, p {
+            font-size: 18px;
+            line-height: 1.6;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .show-back .front {
+            opacity: 0;
+        }
+
+        .show-back .back {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="animateCard()">
+        <div class="front">
+            <h1>Click to see on the back</h1>
+        </div>
+        <div class="back">
+            <p id="birthdayMessage">happy 18th baccha ♡  i wish you all the happiness and peace in the world. manifesting a whole lot of together time for us as well ໒꒰ྀིᵔ ᵕ ᵔ ꒱ྀི১ </p>
+            <p id="bestWishes">yours,<br>didi ✧˖°. </p>
+        </div>
+    </div>
+
+    <script>
+        function animateCard() {
+            const card = document.querySelector('.card');
+            card.classList.toggle('show-back');
+        }
+    </script>
+</body>
+</html>
